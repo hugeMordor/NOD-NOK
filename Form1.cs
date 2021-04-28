@@ -51,23 +51,33 @@ namespace NOD_NOK
         private void button2_Click(object sender, EventArgs e)
         {
             Input();
-            if (N == 1) button2.Text = Convert.ToString(Nums[0]);
-            if (N == 2) button2.Text = Convert.ToString(NOD(Nums[0], Nums[1]));
-            for (int i = 0; i<N-2; i++)
-            {
-                button2.Text = Convert.ToString(NOD(NOD(Nums[i], Nums[i + 1]), Nums[i + 2]));
+            int res = Nums[0];
+            if (N == 1) 
+            { 
+                button2.Text = Convert.ToString(res); 
+                return; 
             }
+            for (int i = 0; i < N; i++)
+            {
+                res = NOD(res, Nums[i]);
+            }
+            button2.Text = Convert.ToString(res);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Input();
-            if (N == 1) button3.Text = Convert.ToString(Nums[0]);
-            if (N == 2) button3.Text = Convert.ToString(NOK(Nums[0], Nums[1]));
-            for (int i = 0; i < N - 2; i++)
-            {
-                button3.Text = Convert.ToString(NOK(NOK(Nums[i], Nums[i + 1]), Nums[i + 2]));
+            int res = Nums[0];
+            if (N == 1) 
+            { 
+                button3.Text = Convert.ToString(res);
+                return;
             }
+            for (int i = 0; i < N; i++)
+            {
+                res = NOK(res, Nums[i]);
+            }
+            button3.Text = Convert.ToString(res);
         }
     }
 }
