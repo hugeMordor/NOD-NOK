@@ -35,13 +35,14 @@ namespace NOD_NOK
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1, Романовский, СДП-КФ-201
+            // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(609, 23);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "64 128 12";
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // button2
             // 

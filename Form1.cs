@@ -31,7 +31,7 @@ namespace NOD_NOK
             button2.Text = "НОД";
             button3.Text = "НОК";
         }
-
+        
         int NOD(int a, int b)
         {
             while (b != 0)
@@ -78,6 +78,13 @@ namespace NOD_NOK
                 res = NOK(res, Nums[i]);
             }
             button3.Text = Convert.ToString(res);
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar) | (e.KeyChar == Convert.ToChar(" ")) | e.KeyChar == '\b') return;
+            else
+                e.Handled = true;
         }
     }
 }
